@@ -79,20 +79,21 @@
         </audio>
 
         <h3>📄 Descargas</h3>
-       <div class="contenedor-descarga">
-    <div class="contador">⬇️ <span id="c1g">0</span></div>
-    <a class="boton-descarga" href="exp1-guia.pdf" download data-count="c1g">Descargar Guía Escrita</a>
-</div>
 
-<div class="contenedor-descarga">
-    <div class="contador">⬇️ <span id="c1o">0</span></div>
-    <a class="boton-descarga" href="exp1-observacion-docente.pdf" download data-count="c1o">Descargar Plantilla de Observación Docente</a>
-</div>
+        <div class="archivo">
+            <a class="boton-descarga" href="exp1-guia.pdf" download>Descargar Guía Escrita</a>
+            <small class="contador">📥 <span id="count-exp1-guia">0</span></small>
+        </div>
 
-<div class="contenedor-descarga">
-    <div class="contador">⬇️ <span id="c1e">0</span></div>
-    <a class="boton-descarga" href="exp1-reflexion-estudiante.pdf" download data-count="c1e">Descargar Plantilla de Reflexión Estudiantil</a>
-</div>
+        <div class="archivo">
+            <a class="boton-descarga" href="exp1-observacion-docente.pdf" download>Descargar Plantilla de Observación Docente</a>
+            <small class="contador">📥 <span id="count-exp1-observacion-docente">0</span></small>
+        </div>
+
+        <div class="archivo">
+            <a class="boton-descarga" href="exp1-reflexion-estudiante.pdf" download>Descargar Plantilla de Reflexión Estudiantil</a>
+            <small class="contador">📥 <span id="count-exp1-reflexion-estudiante">0</span></small>
+        </div>
     </div>
 
     <!-- EXPERIENCIA 2 -->
@@ -105,9 +106,21 @@
         </audio>
 
         <h3>📄 Descargas</h3>
-        <a class="boton-descarga" href="exp2-guia.pdf" download onclick="registrarDescarga('exp2-guia.pdf')">Descargar Guía Escrita</a>
-        <a class="boton-descarga" href="exp2-observacion-docente.pdf" download onclick="registrarDescarga('exp2-observacion-docente.pdf')">Plantilla de Observación Docente</a>
-        <a class="boton-descarga" href="exp2-reflexion-estudiante.pdf" download onclick="registrarDescarga('exp2-reflexion-estudiante.pdf')">Plantilla de Reflexión Estudiantil</a>
+
+        <div class="archivo">
+            <a class="boton-descarga" href="exp2-guia.pdf" download>Descargar Guía Escrita</a>
+            <small class="contador">📥 <span id="count-exp2-guia">0</span></small>
+        </div>
+
+        <div class="archivo">
+            <a class="boton-descarga" href="exp2-observacion-docente.pdf" download>Plantilla de Observación Docente</a>
+            <small class="contador">📥 <span id="count-exp2-observacion-docente">0</span></small>
+        </div>
+
+        <div class="archivo">
+            <a class="boton-descarga" href="exp2-reflexion-estudiante.pdf" download>Plantilla de Reflexión Estudiantil</a>
+            <small class="contador">📥 <span id="count-exp2-reflexion-estudiante">0</span></small>
+        </div>
     </div>
 
     <!-- EXPERIENCIA 3 -->
@@ -120,9 +133,21 @@
         </audio>
 
         <h3>📄 Descargas</h3>
-        <a class="boton-descarga" href="exp3-guia.pdf" download onclick="registrarDescarga('exp3-guia.pdf')">Descargar Guía Escrita</a>
-        <a class="boton-descarga" href="exp3-observacion-docente.pdf" download onclick="registrarDescarga('exp3-observacion-docente.pdf')">Plantilla de Observación Docente</a>
-        <a class="boton-descarga" href="exp3-reflexion-estudiante.pdf" download onclick="registrarDescarga('exp3-reflexion-estudiante.pdf')">Plantilla de Reflexión Estudiantil</a>
+
+        <div class="archivo">
+            <a class="boton-descarga" href="exp3-guia.pdf" download>Descargar Guía Escrita</a>
+            <small class="contador">📥 <span id="count-exp3-guia">0</span></small>
+        </div>
+
+        <div class="archivo">
+            <a class="boton-descarga" href="exp3-observacion-docente.pdf" download>Plantilla de Observación Docente</a>
+            <small class="contador">📥 <span id="count-exp3-observacion-docente">0</span></small>
+        </div>
+
+        <div class="archivo">
+            <a class="boton-descarga" href="exp3-reflexion-estudiante.pdf" download>Plantilla de Reflexión Estudiantil</a>
+            <small class="contador">📥 <span id="count-exp3-reflexion-estudiante">0</span></small>
+        </div>
     </div>
 
     <!-- FORMULARIO -->
@@ -136,14 +161,31 @@
 
 </div>
 
-
-<!-- 📌 SCRIPT PARA REGISTRO EN GOOGLE SHEETS -->
+<!-- 📌 SCRIPT CONTADOR DE DESCARGAS -->
 <script>
-function registrarDescarga(archivo) {
-    fetch("https://script.google.com/macros/s/NO-LO-HEMOS-CREADO-AÚN/exec?archivo=" + archivo);
-}
+  const archivos = [
+    "exp1-audio.mp3","exp1-guia.pdf","exp1-observacion-docente.pdf","exp1-reflexion-estudiante.pdf",
+    "exp2-audio.mp3","exp2-guia.pdf","exp2-observacion-docente.pdf","exp2-reflexion-estudiante.pdf",
+    "exp3-audio.mp3","exp3-guia.pdf","exp3-observacion-docente.pdf","exp3-reflexion-estudiante.pdf"
+  ];
+
+  archivos.forEach(nombre => {
+    const span = document.getElementById(`count-${nombre.split('.')[0]}`);
+    let contador = localStorage.getItem(nombre) || 0;
+    if (span) span.textContent = contador;
+  });
+
+  document.querySelectorAll("a[download]").forEach(link => {
+    link.addEventListener("click", () => {
+      const nombre = link.getAttribute("href");
+      let contador = localStorage.getItem(nombre) || 0;
+      contador++;
+      localStorage.setItem(nombre, contador);
+      const span = document.getElementById(`count-${nombre.split('.')[0]}`);
+      if (span) span.textContent = contador;
+    });
+  });
 </script>
 
 </body>
 </html>
-
