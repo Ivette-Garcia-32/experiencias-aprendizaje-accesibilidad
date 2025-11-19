@@ -1,0 +1,8 @@
+/* styles.css - base para el sitio */
+body{font-family:Arial,Helvetica,sans-serif;background:#f4f6fc;margin:0;color:#222}
+header{background:linear-gradient(135deg,#3b82f6,#06b6d4);padding:40px 20px;color:#fff;text-align:center}
+.container{max-width:900px;margin:20px auto;padding:20px}
+.card{background:#fff;border-radius:12px;padding:20px;margin-bottom:24px;box-shadow:0 6px 18px rgba(12,12,30,0.06)}
+.btn{display:inline-block;background:#2563eb;color:#fff;padding:10px 14px;border-radius:8px;text-decoration:none}
+audio{width:100%;margin-top:12px}
+img.counter{vertical-align:middle;margin-left:10px;height:20px}
