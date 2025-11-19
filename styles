@@ -7,30 +7,34 @@ header{background:linear-gradient(135deg,#3b82f6,#06b6d4);padding:40px 20px;colo
 audio{width:100%;margin-top:12px}
 img.counter{vertical-align:middle;margin-left:10px;height:20px}
 
-/* --- ESTILOS AGREGADOS PARA ALINEAR CONTADOR Y BOTÓN --- */
+/* --- ESTILOS CORREGIDOS PARA EL CONTADOR + BOTÓN --- */
 
 .contenedor-descarga {
-    /* Esto es lo que pone los elementos internos (.contador y .boton-descarga) uno al lado del otro */
-    display: flex; 
-    
-    /* Centra los elementos verticalmente para que el contador y el botón estén alineados */
-    align-items: center; 
-    
-    /* Agrega un poco de espacio debajo de cada grupo de descarga */
-    margin-bottom: 15px; 
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* 👉 botón y contador separados a los extremos */
+    margin-bottom: 15px;
+    padding: 6px 0;
 }
 
-/* Da un poco de espacio entre el contador (la flecha + el número) y el botón */
-.contador {
-    margin-right: 10px; 
-    /* El botón se llama .boton-descarga, no .btn */
-}
-/* Tu botón es un <a> con la clase .boton-descarga, así que no necesitas el estilo .btn */
 .boton-descarga{
     display:inline-block;
     background:#2563eb;
     color:#fff;
     padding:10px 14px;
     border-radius:8px;
-    text-decoration:none
+    text-decoration:none;
+    flex-grow: 1;               /* 👉 el botón ocupa el espacio restante */
+    margin-right: 10px;         /* Espacio antes del contador */
+}
+
+/* 🎯 Apariencia del contador */
+.contador {
+    font-size: 14px;
+    color: #444;
+    display: flex;
+    align-items: center;
+    gap: 4px;                    /* separa la flecha del número */
+    min-width: 45px;             /* para que no brinque cuando aumente el número */
+    justify-content: flex-end;
 }
