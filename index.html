@@ -1,107 +1,222 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<meta charset="UTF-8">
-<title>Experiencias Accesibles – TIC y Discapacidad Visual</title>
-<link rel="stylesheet" href="estilos.css">
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Experiencias de Aprendizaje Accesibles</title>
+
+<link rel="stylesheet" href="estilos">
+
 <style>
-/* Solo pequeños estilos de refuerzo, lo demás estará en estilos.css */
-body { font-family: Arial, sans-serif; margin: 0; background: #f8f9fa; }
-.contenedor { width: 90%; max-width: 900px; margin: auto; padding: 20px; }
-h1, h2 { color: #333; }
-.exp-block { background: white; padding: 15px; border-radius: 8px; margin-bottom: 20px; border: 1px solid #ddd; }
-.exp-block ul { list-style: none; padding: 0; }
-.exp-block li { margin: 6px 0; }
-a.descarga { text-decoration: none; background: #026cdf; color: white; padding: 6px 10px; border-radius: 5px; }
-.descargas-num { font-size: 14px; color: #444; margin-left: 5px; }
-audio { width: 100%; margin-top: 10px; }
-footer { text-align: center; padding: 15px; margin-top: 30px; background: #ddd; }
+/* --- ESTILOS ORIGINALES Y CLASES PARA ESTRUCTURA --- */
+body{font-family:Arial,Helvetica,sans-serif;margin:0;background:#f5f5f5;color:#333}
+header{background:#1a73e8;color:#fff;padding:20px;text-align:center}
+.contenedor{max-width:900px;margin:auto;padding:20px}
+.exp-card{background:#fff;padding:20px;margin-bottom:25px;border-radius:10px;box-shadow:0 4px 10px rgba(0,0,0,0.1)}
+.exp-card h2{margin-top:0}
+a.boton-descarga{background:#1a73e8;color:#fff;padding:10px 15px;border-radius:6px;text-decoration:none;display:inline-block;margin:5px 0}
+a.boton-descarga:hover{background:#0b57d0}
+audio{margin-top:10px;width:100%}
+
+/* Archivo + contador en una fila */
+.archivo{display:flex;align-items:center;justify-content:space-between;margin:8px 0}
+.contador{font-size:13px;color:#444;display:flex;align-items:center;gap:6px;min-width:70px;justify-content:flex-end}
 </style>
 </head>
-
 <body>
 
+<header>
+  <h1>Experiencias de Aprendizaje Accesibles</h1>
+  <p>Estrategias para apoyar a estudiantes ciegos en el acceso a la información</p>
+</header>
+
 <div class="contenedor">
-    <h1>Experiencias Accesibles con Herramientas Tecnológicas</h1>
-    <p>Propuestas para el acceso a la información por parte de personas con discapacidad visual, elaboradas por <strong>Ivette García</strong>.</p>
 
+    <div class="exp-card">
+    <h2>1. Escribe con tu voz: experimenta la accesibilidad con TalkBack</h2>
 
-    <!-- EXPERIENCIA 1 -->
-    <div class="exp-block">
-        <h2>Experiencia de aprendizaje 1<br>Escribe con tu voz: experimenta la accesibilidad con TalkBack</h2>
+    <h3>🎧 Audio de la experiencia</h3>
+    <audio controls><source src="exp1-audio.mp3" type="audio/mpeg"></audio>
 
-        <audio src="exp1-audio.mp3" controls></audio>
+    <h3>📄 Descargas</h3>
 
-        <ul>
-            <li><a class="descarga" href="exp1-guia.pdf" download onclick="sumar('exp1-guia')">📄 Descargar Guía</a><span class="descargas-num" id="exp1-guia">0</span></li>
-            <li><a class="descarga" href="exp1-observacion-docente.pdf" download onclick="sumar('exp1-observacion')">📋 Descargar Observación Docente</a><span class="descargas-num" id="exp1-observacion">0</span></li>
-            <li><a class="descarga" href="exp1-reflexion-estudiante.pdf" download onclick="sumar('exp1-reflexion')">📝 Descargar Reflexión del Estudiante</a><span class="descargas-num" id="exp1-reflexion">0</span></li>
-        </ul>
-    </div>
+    <div class="archivo">
+            <a class="boton-descarga" href="#" onclick="trackDownload('exp1-guia.pdf', event)">Descargar Guía Escrita</a>
+      <div class="contador">📥 <span id="count-exp1-guia">0</span></div>
+    </div>
 
+    <div class="archivo">
+      <a class="boton-descarga" href="#" onclick="trackDownload('exp1-observacion-docente.pdf', event)">Descargar Plantilla de Observación Docente</a>
+      <div class="contador">📥 <span id="count-exp1-observacion-docente">0</span></div>
+    </div>
 
-    <!-- EXPERIENCIA 2 -->
-    <div class="exp-block">
-        <h2>Experiencia de aprendizaje 2<br>Descubre con tus oídos: explorando el mundo con Google Lens</h2>
+    <div class="archivo">
+      <a class="boton-descarga" href="#" onclick="trackDownload('exp1-reflexion-estudiante.pdf', event)">Descargar Plantilla de Reflexión Estudiantil</a>
+      <div class="contador">📥 <span id="count-exp1-reflexion-estudiante">0</span></div>
+    </div>
+  </div>
 
-        <audio src="exp2-audio.mp3" controls></audio>
+    <div class="exp-card">
+    <h2>2. Descubre con tus oídos: explorando el mundo con Google Lens</h2>
 
-        <ul>
-            <li><a class="descarga" href="exp2-guia.pdf" download onclick="sumar('exp2-guia')">📄 Descargar Guía</a><span class="descargas-num" id="exp2-guia">0</span></li>
-            <li><a class="descarga" href="exp2-observacion-docente.pdf" download onclick="sumar('exp2-observacion')">📋 Descargar Observación Docente</a><span class="descargas-num" id="exp2-observacion">0</span></li>
-            <li><a class="descarga" href="exp2-reflexion-estudiante.pdf" download onclick="sumar('exp2-reflexion')">📝 Descargar Reflexión del Estudiante</a><span class="descargas-num" id="exp2-reflexion">0</span></li>
-        </ul>
-    </div>
+    <h3>🎧 Audio de la experiencia</h3>
+    <audio controls><source src="exp2-audio.mp3" type="audio/mpeg"></audio>
 
+    <h3>📄 Descargas</h3>
 
-    <!-- EXPERIENCIA 3 -->
-    <div class="exp-block">
-        <h2>Experiencia de aprendizaje 3<br>Escucha para aprender: acceso a la información escrita con Lookout</h2>
+    <div class="archivo">
+      <a class="boton-descarga" href="#" onclick="trackDownload('exp2-guia.pdf', event)">Descargar Guía Escrita</a>
+      <div class="contador">📥 <span id="count-exp2-guia">0</span></div>
+    </div>
 
-        <audio src="exp3-audio.mp3" controls></audio>
+    <div class="archivo">
+      <a class="boton-descarga" href="#" onclick="trackDownload('exp2-observacion-docente.pdf', event)">Plantilla de Observación Docente</a>
+      <div class="contador">📥 <span id="count-exp2-observacion-docente">0</span></div>
+    </div>
 
-        <ul>
-            <li><a class="descarga" href="exp3-guia.pdf" download onclick="sumar('exp3-guia')">📄 Descargar Guía</a><span class="descargas-num" id="exp3-guia">0</span></li>
-            <li><a class="descarga" href="exp3-observacion-docente.pdf" download onclick="sumar('exp3-observacion')">📋 Descargar Observación Docente</a><span class="descargas-num" id="exp3-observacion">0</span></li>
-            <li><a class="descarga" href="exp3-reflexion-estudiante.pdf" download onclick="sumar('exp3-reflexion')">📝 Descargar Reflexión del Estudiante</a><span class="descargas-num" id="exp3-reflexion">0</span></li>
-        </ul>
-    </div>
+    <div class="archivo">
+      <a class="boton-descarga" href="#" onclick="trackDownload('exp2-reflexion-estudiante.pdf', event)">Plantilla de Reflexión Estudiantil</a>
+      <div class="contador">📥 <span id="count-exp2-reflexion-estudiante">0</span></div>
+    </div>
+  </div>
 
+    <div class="exp-card">
+    <h2>3. Escucha para aprender: acceso a la información escrita con Lookout</h2>
 
-    <!-- FORMULARIO -->
-    <h2>Comentarios o Reflexión del Uso de las Experiencias</h2>
+    <h3>🎧 Audio de la experiencia</h3>
+    <audio controls><source src="exp3-audio.mp3" type="audio/mpeg"></audio>
 
-    <iframe src="https://docs.google.com/forms/d/e/1FAIpQLScHSi5whEBBhPT5ozshtAcYZHtRiiV6uMyn6WS3DViU3HjZ4Q/viewform?embedded=true" width="100%" height="800" frameborder="0">Cargando…</iframe>
+    <h3>📄 Descargas</h3>
 
+    <div class="archivo">
+      <a class="boton-descarga" href="#" onclick="trackDownload('exp3-guia.pdf', event)">Descargar Guía Escrita</a>
+      <div class="contador">📥 <span id="count-exp3-guia">0</span></div>
+    </div>
+
+    <div class="archivo">
+      <a class="boton-descarga" href="#" onclick="trackDownload('exp3-observacion-docente.pdf', event)">Plantilla de Observación Docente</a>
+      <div class="contador">📥 <span id="count-exp3-observacion-docente">0</span></div>
+    </div>
+
+    <div class="archivo">
+      <a class="boton-descarga" href="#" onclick="trackDownload('exp3-reflexion-estudiante.pdf', event)">Plantilla de Reflexión Estudiantil</a>
+      <div class="contador">📥 <span id="count-exp3-reflexion-estudiante">0</span></div>
+    </div>
+  </div>
+
+    <div class="exp-card" id="comentarios-giscus">
+    <h2>💬 Comparte tu opinión sobre estas experiencias</h2>
+    <p>Tu retroalimentación nos ayuda a mejorar estas guías y experiencias. Los comentarios se guardan usando las Discusiones de GitHub.</p>
+    
+        <div class="giscus"></div>
+  </div>
 
 </div>
 
-
-<footer>
-    © 2025 – Repositorio académico creado por Ivette García
-</footer>
-
-<!-- SCRIPT CONTADOR -->
 <script>
-function sumar(id){
-    let num = localStorage.getItem(id);
-    num = num ? parseInt(num) + 1 : 1;
-    localStorage.setItem(id, num);
-    document.getElementById(id).textContent = num;
+// ---------- 1. CONFIGURACIÓN DE RASTREO DE DESCARGAS (Google Forms) ----------
+const FORM_SUBMIT_URL = 'https://docs.google.com/forms/d/e/1FAIpQLScHSi5whEBBhPT5ozshtAcYZHtRiiV6uMyn6WS3DViU3HjZ4Q/formResponse';
+// 🚨 ¡IMPORTANTE! REEMPLAZA "entry.1234567890" por el ID REAL de tu campo en Google Forms
+// Este ID es donde se guardará el nombre del archivo (exp1-guia.pdf)
+const FILE_NAME_ENTRY_ID = 'entry.1051512415';
+
+/**
+ * Función que registra el evento en Google Forms y luego inicia la descarga.
+ * @param {string} fileName - El nombre del archivo a descargar (ej: 'exp1-guia.pdf').
+ * @param {Event} e - El evento de click.
+ */
+function trackDownload(fileName, e) {
+    // Previene que el enlace vaya a la URL vacía '#'
+    e.preventDefault(); 
+    
+    // 1. Registrar el evento en Google Forms (invisiblemente)
+    // Usamos la API Fetch para enviar los datos en segundo plano
+    fetch(FORM_SUBMIT_URL, {
+        method: 'POST',
+        mode: 'no-cors', // Necesario para evitar problemas de CORS
+        headers: {
+            'Content-Type': 'application/x-www-form-urlencoded',
+        },
+        body: `${FILE_NAME_ENTRY_ID}=${encodeURIComponent(fileName)}&submit=Submit`
+    }).then(() => {
+        // Éxito en el registro (o no se pudo verificar)
+        console.log(`Registro de descarga exitoso para: ${fileName}`);
+    }).catch(error => {
+        // Falló el registro
+        console.error('Error al registrar la descarga en Forms:', error);
+    }).finally(() => {
+        // 2. Iniciar la descarga del archivo (Siempre se ejecuta)
+        window.location.href = fileName;
+    });
+
+    // 3. (Opcional) Simular el incremento visualmente para darle una sensación de funcionamiento.
+    // NOTA: Este número no será el real hasta que lo actualices manualmente.
+    const spanId = 'count-' + fileName.split('.')[0];
+    const span = document.getElementById(spanId);
+    if(span) {
+        const currentCount = parseInt(span.textContent) || 0;
+        span.textContent = currentCount + 1;
+    }
 }
 
-// Mostrar valores al cargar
-window.onload = () => {
-    ['exp1-guia','exp1-observacion','exp1-reflexion',
-     'exp2-guia','exp2-observacion','exp2-reflexion',
-     'exp3-guia','exp3-observacion','exp3-reflexion']
-    .forEach(id=>{
-        if(localStorage.getItem(id)){
-            document.getElementById(id).textContent = localStorage.getItem(id);
-        }
-    });
+
+// ---------- 2. GISCUS (Sistema de Comentarios Públicos) ----------
+
+const giscusAttributes = {
+    "src": "https://giscus.app/client.js",
+    "data-repo": "TU_USUARIO/TU_REPOSITORIO", // 🚨 REEMPLAZAR con el nombre de tu repositorio de GitHub (ej: 'miusuario/tesis-accesible')
+    "data-repo-id": "R_kgDOXXXXXXXX", // 🚨 REEMPLAZAR con el ID de tu repositorio (lo obtienes del sitio de Giscus)
+    "data-category": "Announcements", // 🚨 REEMPLAZAR con la categoría que deseas usar para los comentarios (ej: 'General')
+    "data-category-id": "DIC_kwDOXXXXXXXX", // 🚨 REEMPLAZAR con el ID de la categoría (lo obtienes del sitio de Giscus)
+    "data-mapping": "pathname", // Mapea comentarios por la URL (útil si usas la misma página para varias cosas)
+    "data-strict": "0",
+    "data-reactions-enabled": "1",
+    "data-emit-metadata": "0",
+    "data-input-position": "top",
+    "data-theme": "light",
+    "data-lang": "es",
+    "crossorigin": "anonymous",
+    "async": "",
+};
+
+const script = document.createElement("script");
+Object.entries(giscusAttributes).forEach(([key, value]) => script.setAttribute(key, value));
+document.querySelector('#comentarios-giscus .giscus').appendChild(script);
+
+// ---------- 3. VISUALIZACIÓN DE DESCARGAS INICIAL (Manual) ----------
+
+/**
+ * Función que carga los conteos iniciales.
+ * Los datos deben actualizarse periódicamente por ti
+ * basándote en el conteo de tu Hoja de Cálculo de Google.
+ */
+function loadInitialCounts() {
+    // 🚨 EJEMPLO: Reemplaza estos valores con los totales de descargas
+    // que obtengas de tu Hoja de Cálculo de Google
+    const manualCounts = {
+        'count-exp1-guia': 15,
+        'count-exp1-observacion-docente': 8,
+        'count-exp1-reflexion-estudiante': 12,
+        'count-exp2-guia': 20,
+        'count-exp2-observacion-docente': 9,
+        'count-exp2-reflexion-estudiante': 14,
+        'count-exp3-guia': 18,
+        'count-exp3-observacion-docente': 10,
+        'count-exp3-reflexion-estudiante': 11,
+    };
+
+    Object.entries(manualCounts).forEach(([id, count]) => {
+        const span = document.getElementById(id);
+        if(span) span.textContent = count;
+    });
 }
+
+loadInitialCounts();
+
 </script>
 
 </body>
 </html>
+
+     
+
