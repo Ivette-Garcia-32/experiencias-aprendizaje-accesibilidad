@@ -1,275 +1,286 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Experiencias de Aprendizaje Accesibles</title>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Experiencias de Aprendizaje Accesibles</title>
 
-    <!-- Estilos externos -->
-    <link rel="stylesheet" href="estilos">
+<link rel="stylesheet" href="estilos">
 
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background: #f5f5f5;
-            color: #333;
-        }
-        header {
-            background: #1a73e8;
-            color: white;
-            padding: 20px;
-            text-align: center;
-        }
-        h1, h2 {
-            margin-bottom: 5px;
-        }
-        .contenedor {
-            max-width: 900px;
-            margin: auto;
-            padding: 20px;
-        }
-        .exp-card {
-            background: white;
-            padding: 20px;
-            margin-bottom: 25px;
-            border-radius: 10px;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-        }
-        .exp-card h2 {
-            margin-top: 0;
-        }
-        a.boton-descarga {
-            background: #1a73e8;
-            color: white;
-            padding: 10px 15px;
-            border: none;
-            border-radius: 6px;
-            text-decoration: none;
-            display: inline-block;
-            margin: 5px 0;
-        }
-        a.boton-descarga:hover {
-            background: #0b57d0;
-        }
-        audio {
-            margin-top: 10px;
-            width: 100%;
-        }
+<style>
+/* --- Mantengo tu estilo y agrego pequeñas clases para counters y blog --- */
+body{font-family:Arial,Helvetica,sans-serif;margin:0;background:#f5f5f5;color:#333}
+header{background:#1a73e8;color:#fff;padding:20px;text-align:center}
+.contenedor{max-width:900px;margin:auto;padding:20px}
+.exp-card{background:#fff;padding:20px;margin-bottom:25px;border-radius:10px;box-shadow:0 4px 10px rgba(0,0,0,0.1)}
+.exp-card h2{margin-top:0}
+a.boton-descarga{background:#1a73e8;color:#fff;padding:10px 15px;border-radius:6px;text-decoration:none;display:inline-block;margin:5px 0}
+a.boton-descarga:hover{background:#0b57d0}
+audio{margin-top:10px;width:100%}
 
-        /* ESTILOS PARA COMENTARIOS */
-        .input-comentario, .textarea-comentario {
-            width: 100%;
-            padding: 10px;
-            margin-bottom: 10px;
-            border: 1px solid #ccc;
-            border-radius: 6px;
-            box-sizing: border-box;
-            font-family: Arial, sans-serif;
-            font-size: 14px;
-        }
+/* Archivo + contador en una fila */
+.archivo{display:flex;align-items:center;justify-content:space-between;margin:8px 0}
+.contador{font-size:13px;color:#444;display:flex;align-items:center;gap:6px;min-width:70px;justify-content:flex-end}
 
-        .boton-enviar {
-            background: #1a73e8;
-            color: white;
-            padding: 10px 15px;
-            border: none;
-            border-radius: 6px;
-            cursor: pointer;
-            font-size: 14px;
-        }
-
-        .boton-enviar:hover {
-            background: #0b57d0;
-        }
-
-        .comentario-card {
-            background: #f9f9f9;
-            border: 1px solid #ddd;
-            border-radius: 8px;
-            padding: 12px 15px;
-            margin-bottom: 12px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
-        }
-
-        .comentario-card strong {
-            color: #1a73e8;
-        }
-
-        .comentario-card em {
-            color: #555;
-            font-size: 12px;
-        }
-    </style>
+/* Comentarios estilo blog */
+.input-comentario,.textarea-comentario{width:100%;padding:10px;margin-bottom:10px;border:1px solid #ccc;border-radius:6px;box-sizing:border-box;font-size:14px}
+.boton-enviar{background:#1a73e8;color:#fff;padding:10px 15px;border:none;border-radius:6px;cursor:pointer;font-size:14px}
+.boton-enviar:hover{background:#0b57d0}
+.comentario-card{background:#f9f9f9;border:1px solid #ddd;border-radius:8px;padding:12px 15px;margin-bottom:12px;box-shadow:0 2px 5px rgba(0,0,0,0.05)}
+.comentario-card strong{color:#1a73e8}
+.comentario-card em{color:#555;font-size:12px}
+.info-privacidad{font-size:12px;color:#555;margin-top:8px}
+</style>
 </head>
-
 <body>
 
 <header>
-    <h1>Experiencias de Aprendizaje Accesibles</h1>
-    <p>Estrategias para apoyar a estudiantes ciegos en el acceso a la información</p>
+  <h1>Experiencias de Aprendizaje Accesibles</h1>
+  <p>Estrategias para apoyar a estudiantes ciegos en el acceso a la información</p>
 </header>
 
 <div class="contenedor">
 
-    <!-- EXPERIENCIA 1 -->
-    <div class="exp-card">
-        <h2>1. Escribe con tu voz: experimenta la accesibilidad con TalkBack</h2>
+  <!-- EXPERIENCIA 1 -->
+  <div class="exp-card">
+    <h2>1. Escribe con tu voz: experimenta la accesibilidad con TalkBack</h2>
 
-        <h3>🎧 Audio de la experiencia</h3>
-        <audio controls>
-            <source src="exp1-audio.mp3" type="audio/mpeg">
-        </audio>
+    <h3>🎧 Audio de la experiencia</h3>
+    <audio controls><source src="exp1-audio.mp3" type="audio/mpeg"></audio>
 
-        <h3>📄 Descargas</h3>
+    <h3>📄 Descargas</h3>
 
-        <div class="archivo">
-            <a class="boton-descarga" href="exp1-guia.pdf" download>Descargar Guía Escrita</a>
-            <small class="contador">📥 <span id="count-exp1-guia">0</span></small>
-        </div>
-
-        <div class="archivo">
-            <a class="boton-descarga" href="exp1-observacion-docente.pdf" download>Descargar Plantilla de Observación Docente</a>
-            <small class="contador">📥 <span id="count-exp1-observacion-docente">0</span></small>
-        </div>
-
-        <div class="archivo">
-            <a class="boton-descarga" href="exp1-reflexion-estudiante.pdf" download>Descargar Plantilla de Reflexión Estudiantil</a>
-            <small class="contador">📥 <span id="count-exp1-reflexion-estudiante">0</span></small>
-        </div>
+    <div class="archivo">
+      <a class="boton-descarga" href="exp1-guia.pdf" download data-file="exp1-guia.pdf">Descargar Guía Escrita</a>
+      <div class="contador">📥 <span id="count-exp1-guia">0</span></div>
     </div>
 
-    <!-- EXPERIENCIA 2 -->
-    <div class="exp-card">
-        <h2>2. Descubre con tus oídos: explorando el mundo con Google Lens</h2>
-
-        <h3>🎧 Audio de la experiencia</h3>
-        <audio controls>
-            <source src="exp2-audio.mp3" type="audio/mpeg">
-        </audio>
-
-        <h3>📄 Descargas</h3>
-
-        <div class="archivo">
-            <a class="boton-descarga" href="exp2-guia.pdf" download>Descargar Guía Escrita</a>
-            <small class="contador">📥 <span id="count-exp2-guia">0</span></small>
-        </div>
-
-        <div class="archivo">
-            <a class="boton-descarga" href="exp2-observacion-docente.pdf" download>Plantilla de Observación Docente</a>
-            <small class="contador">📥 <span id="count-exp2-observacion-docente">0</span></small>
-        </div>
-
-        <div class="archivo">
-            <a class="boton-descarga" href="exp2-reflexion-estudiante.pdf" download>Plantilla de Reflexión Estudiantil</a>
-            <small class="contador">📥 <span id="count-exp2-reflexion-estudiante">0</span></small>
-        </div>
+    <div class="archivo">
+      <a class="boton-descarga" href="exp1-observacion-docente.pdf" download data-file="exp1-observacion-docente.pdf">Descargar Plantilla de Observación Docente</a>
+      <div class="contador">📥 <span id="count-exp1-observacion-docente">0</span></div>
     </div>
 
-    <!-- EXPERIENCIA 3 -->
-    <div class="exp-card">
-        <h2>3. Escucha para aprender: acceso a la información escrita con Lookout</h2>
+    <div class="archivo">
+      <a class="boton-descarga" href="exp1-reflexion-estudiante.pdf" download data-file="exp1-reflexion-estudiante.pdf">Descargar Plantilla de Reflexión Estudiantil</a>
+      <div class="contador">📥 <span id="count-exp1-reflexion-estudiante">0</span></div>
+    </div>
+  </div>
 
-        <h3>🎧 Audio de la experiencia</h3>
-        <audio controls>
-            <source src="exp3-audio.mp3" type="audio/mpeg">
-        </audio>
+  <!-- EXPERIENCIA 2 -->
+  <div class="exp-card">
+    <h2>2. Descubre con tus oídos: explorando el mundo con Google Lens</h2>
 
-        <h3>📄 Descargas</h3>
+    <h3>🎧 Audio de la experiencia</h3>
+    <audio controls><source src="exp2-audio.mp3" type="audio/mpeg"></audio>
 
-        <div class="archivo">
-            <a class="boton-descarga" href="exp3-guia.pdf" download>Descargar Guía Escrita</a>
-            <small class="contador">📥 <span id="count-exp3-guia">0</span></small>
-        </div>
+    <h3>📄 Descargas</h3>
 
-        <div class="archivo">
-            <a class="boton-descarga" href="exp3-observacion-docente.pdf" download>Plantilla de Observación Docente</a>
-            <small class="contador">📥 <span id="count-exp3-observacion-docente">0</span></small>
-        </div>
-
-        <div class="archivo">
-            <a class="boton-descarga" href="exp3-reflexion-estudiante.pdf" download>Plantilla de Reflexión Estudiantil</a>
-            <small class="contador">📥 <span id="count-exp3-reflexion-estudiante">0</span></small>
-        </div>
+    <div class="archivo">
+      <a class="boton-descarga" href="exp2-guia.pdf" download data-file="exp2-guia.pdf">Descargar Guía Escrita</a>
+      <div class="contador">📥 <span id="count-exp2-guia">0</span></div>
     </div>
 
-    <!-- COMENTARIOS ESTILO BLOG -->
-    <div class="exp-card" id="comentarios-blog">
-        <h2>💬 Comparte tu opinión sobre estas experiencias</h2>
-        <p>Tu retroalimentación nos ayuda a mejorar estas guías y experiencias.</p>
-
-        <form id="form-comentarios" style="margin-top:15px;">
-            <label for="nombre">Nombre:</label><br>
-            <input type="text" id="nombre" name="nombre" required class="input-comentario"><br>
-
-            <label for="correo">Correo (opcional):</label><br>
-            <input type="email" id="correo" name="correo" class="input-comentario"><br>
-
-            <label for="comentario">Comentario:</label><br>
-            <textarea id="comentario" name="comentario" rows="4" required class="textarea-comentario"></textarea><br>
-
-            <button type="submit" class="boton-enviar">Enviar</button>
-        </form>
-
-        <h3 style="margin-top:20px;">Comentarios recientes</h3>
-        <div id="lista-comentarios" style="margin-top:10px;"></div>
+    <div class="archivo">
+      <a class="boton-descarga" href="exp2-observacion-docente.pdf" download data-file="exp2-observacion-docente.pdf">Plantilla de Observación Docente</a>
+      <div class="contador">📥 <span id="count-exp2-observacion-docente">0</span></div>
     </div>
+
+    <div class="archivo">
+      <a class="boton-descarga" href="exp2-reflexion-estudiante.pdf" download data-file="exp2-reflexion-estudiante.pdf">Plantilla de Reflexión Estudiantil</a>
+      <div class="contador">📥 <span id="count-exp2-reflexion-estudiante">0</span></div>
+    </div>
+  </div>
+
+  <!-- EXPERIENCIA 3 -->
+  <div class="exp-card">
+    <h2>3. Escucha para aprender: acceso a la información escrita con Lookout</h2>
+
+    <h3>🎧 Audio de la experiencia</h3>
+    <audio controls><source src="exp3-audio.mp3" type="audio/mpeg"></audio>
+
+    <h3>📄 Descargas</h3>
+
+    <div class="archivo">
+      <a class="boton-descarga" href="exp3-guia.pdf" download data-file="exp3-guia.pdf">Descargar Guía Escrita</a>
+      <div class="contador">📥 <span id="count-exp3-guia">0</span></div>
+    </div>
+
+    <div class="archivo">
+      <a class="boton-descarga" href="exp3-observacion-docente.pdf" download data-file="exp3-observacion-docente.pdf">Plantilla de Observación Docente</a>
+      <div class="contador">📥 <span id="count-exp3-observacion-docente">0</span></div>
+    </div>
+
+    <div class="archivo">
+      <a class="boton-descarga" href="exp3-reflexion-estudiante.pdf" download data-file="exp3-reflexion-estudiante.pdf">Plantilla de Reflexión Estudiantil</a>
+      <div class="contador">📥 <span id="count-exp3-reflexion-estudiante">0</span></div>
+    </div>
+  </div>
+
+  <!-- COMENTARIOS (estilo blog) -->
+  <div class="exp-card" id="comentarios-blog">
+    <h2>💬 Comparte tu opinión sobre estas experiencias</h2>
+    <p>Tu retroalimentación nos ayuda a mejorar estas guías y experiencias.</p>
+
+    <form id="form-comentarios" style="margin-top:15px;">
+      <label for="nombre">Nombre:</label><br>
+      <input type="text" id="nombre" name="nombre" required class="input-comentario"><br>
+
+      <label for="correo">Correo (opcional):</label><br>
+      <input type="email" id="correo" name="correo" class="input-comentario"><br>
+
+      <label for="comentario">Comentario:</label><br>
+      <textarea id="comentario" name="comentario" rows="4" required class="textarea-comentario"></textarea><br>
+
+      <button type="submit" class="boton-enviar">Enviar</button>
+    </form>
+
+    <p class="info-privacidad">📌 Al enviar, aceptas que nombre y correo (si lo proporcionas) sean almacenados para fines académicos y no serán publicados. </p>
+
+    <h3 style="margin-top:20px;">Comentarios recientes</h3>
+    <div id="lista-comentarios" style="margin-top:10px;"></div>
+  </div>
 
 </div>
 
-<!-- 📌 SCRIPT CONTADOR DE DESCARGAS -->
-<script>
-  const archivos = [
-    "exp1-audio.mp3","exp1-guia.pdf","exp1-observacion-docente.pdf","exp1-reflexion-estudiante.pdf",
-    "exp2-audio.mp3","exp2-guia.pdf","exp2-observacion-docente.pdf","exp2-reflexion-estudiante.pdf",
-    "exp3-audio.mp3","exp3-guia.pdf","exp3-observacion-docente.pdf","exp3-reflexion-estudiante.pdf"
-  ];
+<!-- ---------------- FIREBASE + LÓGICA ---------------- -->
+<!-- Módulos ES (type=module) -->
+<script type="module">
+/* ---------- 1) Importar y configurar Firebase ---------- */
+import { initializeApp } from "https://www.gstatic.com/firebasejs/12.6.0/firebase-app.js";
+import {
+  getFirestore, collection, addDoc, doc, getDoc, setDoc, updateDoc, onSnapshot, increment
+} from "https://www.gstatic.com/firebasejs/12.6.0/firebase-firestore.js";
 
-  archivos.forEach(nombre => {
-    const span = document.getElementById(`count-${nombre.split('.')[0]}`);
-    let contador = localStorage.getItem(nombre) || 0;
-    if (span) span.textContent = contador;
-  });
+/* --- PEGA AQUÍ TU firebaseConfig (el que ya obtuviste en la consola) --- */
+const firebaseConfig = {
+  apiKey: "AIzaSyDCCeBiLlaI823x9YfSnAAabMIu74buZQY",
+  authDomain: "proyecto-experiencias-c71d2.firebaseapp.com",
+  projectId: "proyecto-experiencias-c71d2",
+  storageBucket: "proyecto-experiencias-c71d2.firebasestorage.app",
+  messagingSenderId: "736732464594",
+  appId: "1:736732464594:web:00356614b151064c6db40b"
+};
 
-  document.querySelectorAll("a[download]").forEach(link => {
-    link.addEventListener("click", () => {
-      const nombre = link.getAttribute("href");
-      let contador = localStorage.getItem(nombre) || 0;
-      contador++;
-      localStorage.setItem(nombre, contador);
-      const span = document.getElementById(`count-${nombre.split('.')[0]}`);
-      if (span) span.textContent = contador;
+const app = initializeApp(firebaseConfig);
+const db = getFirestore(app);
+
+/* ---------- 2) CONTADORES GLOBALES DE DESCARGAS ---------- */
+
+/*
+Estrategia:
+- Colección: "downloads"
+- Documento por archivo: ID será el nombre del archivo (ej. "exp1-guia.pdf")
+- Campo: {count: number}
+- Cuando la página carga: escuchamos los documentos con onSnapshot para mostrar conteos en tiempo real
+- Al hacer clic en un enlace con atributo data-file, usamos updateDoc con increment(1) para actualizar de forma atómica
+*/
+
+const archivos = [
+  "exp1-guia.pdf","exp1-observacion-docente.pdf","exp1-reflexion-estudiante.pdf",
+  "exp2-guia.pdf","exp2-observacion-docente.pdf","exp2-reflexion-estudiante.pdf",
+  "exp3-guia.pdf","exp3-observacion-docente.pdf","exp3-reflexion-estudiante.pdf"
+];
+
+// Asegurarnos que existan docs en Firestore (crearlos si no existen)
+async function asegurarDocsIniciales(){
+  for(const nombre of archivos){
+    const ref = doc(db, "downloads", nombre);
+    const snap = await getDoc(ref);
+    if(!snap.exists()){
+      await setDoc(ref, { count: 0 });
+    }
+  }
+}
+
+// Mostrar conteos en la UI y suscribirse a cambios en tiempo real
+function suscribirContadores(){
+  const collRef = collection(db, "downloads");
+  onSnapshot(collRef, snapshot => {
+    snapshot.forEach(docSnap => {
+      const id = docSnap.id; // nombre del archivo
+      const data = docSnap.data();
+      const span = document.getElementById("count-" + id.split('.')[0]);
+      if(span) span.textContent = data.count ?? 0;
     });
   });
+}
 
-  // SCRIPT COMENTARIOS
-  const form = document.getElementById('form-comentarios');
-  const lista = document.getElementById('lista-comentarios');
-
-  let comentarios = JSON.parse(localStorage.getItem('comentariosBlog')) || [];
-  comentarios.forEach(c => mostrarComentario(c));
-
-  form.addEventListener('submit', e => {
-      e.preventDefault();
-      const nombre = document.getElementById('nombre').value;
-      const correo = document.getElementById('correo').value;
-      const comentario = document.getElementById('comentario').value;
-
-      const nuevoComentario = {nombre, correo, comentario, fecha: new Date().toLocaleString()};
-      comentarios.push(nuevoComentario);
-      localStorage.setItem('comentariosBlog', JSON.stringify(comentarios));
-
-      mostrarComentario(nuevoComentario);
-      form.reset();
-  });
-
-  function mostrarComentario(c) {
-      const div = document.createElement('div');
-      div.classList.add('comentario-card');
-      div.innerHTML = `<strong>${c.nombre}</strong> <em>(${c.fecha})</em><br>${c.comentario}`;
-      lista.prepend(div);
+// Listener: cuando alguien hace clic en el <a data-file="..."> se incrementa el contador
+document.addEventListener("click", async (e) => {
+  const a = e.target.closest("a[data-file]");
+  if(!a) return;
+  const nombre = a.getAttribute("data-file");
+  // incrementar contador en Firestore (atómico)
+  const ref = doc(db, "downloads", nombre);
+  try{
+    await updateDoc(ref, { count: increment(1) });
+  }catch(err){
+    // si no existe, crear con 1
+    await setDoc(ref, { count: 1 });
   }
+});
+
+/* Inicializar contadores globales */
+await asegurarDocsIniciales();
+suscribirContadores();
+
+/* ---------- 3) COMENTARIOS (colección "comments") ---------- */
+
+/*
+Estrategia:
+- Colección: "comments"
+- Campos guardados: { name, email, comment, createdAt }
+- Se muestran en la UI en tiempo real con onSnapshot (ordenados por createdAt desc)
+*/
+
+const commentsCol = collection(db, "comments");
+
+// Enviar comentario
+const form = document.getElementById("form-comentarios");
+const lista = document.getElementById("lista-comentarios");
+
+form.addEventListener("submit", async (ev) => {
+  ev.preventDefault();
+  const name = document.getElementById("nombre").value.trim();
+  const email = document.getElementById("correo").value.trim();
+  const comment = document.getElementById("comentario").value.trim();
+  if(!name || !comment) return alert("Por favor completa nombre y comentario.");
+
+  // Guardar en Firestore
+  try{
+    await addDoc(commentsCol, {
+      name,
+      email: email || "",
+      comment,
+      createdAt: new Date().toISOString()
+    });
+    form.reset();
+  }catch(err){
+    console.error("Error guardando comentario:", err);
+    alert("No se pudo enviar el comentario. Intenta de nuevo.");
+  }
+});
+
+// Mostrar comentarios en tiempo real (los nuevos primero)
+import { query, orderBy } from "https://www.gstatic.com/firebasejs/12.6.0/firebase-firestore.js";
+const q = query(commentsCol, orderBy("createdAt","desc"));
+onSnapshot(q, snapshot => {
+  lista.innerHTML = "";
+  snapshot.forEach(docSnap => {
+    const d = docSnap.data();
+    const div = document.createElement("div");
+    div.classList.add("comentario-card");
+    const when = (d.createdAt) ? (new Date(d.createdAt)).toLocaleString() : "";
+    div.innerHTML = `<strong>${escapeHtml(d.name)}</strong> <em>(${when})</em><br>${escapeHtml(d.comment)}`;
+    lista.appendChild(div);
+  });
+});
+
+/* ---------- 4) Helpers ---------- */
+function escapeHtml(str){
+  if(!str) return "";
+  return str.replaceAll("&","&amp;").replaceAll("<","&lt;").replaceAll(">","&gt;").replaceAll('"',"&quot;");
+}
 </script>
 
 </body>
